@@ -1,0 +1,37 @@
+//;multiplication1 (-110)x(-25) = 2750
+MOVC2 R0, R0
+MOV R0, #-110
+MOVC3 R1, R1
+MOV R1, #-25
+MOVC1 R0, R1
+
+//;multiplication2 (53)x(47) = 2491
+MOVC2 R2, R2
+MOV R2, #53
+MOVC3 R3, R3
+MOV R3, #47
+MOVC1 R2, R3
+
+//;multiplication3 (-85)x(103) = -8755
+MOVC2 R4, R4
+MOV R4, #-85
+MOVC3 R5, R5
+MOV R5, #103
+MOVC1 R4, R5
+
+//;multiplication4 (56)x(-32) = -1792
+MOVC2 R6, R6
+MOV R6, #56
+MOVC3 R7, R7
+MOV R7, #-32
+MOVC1 R6, R7
+
+//;multiplication5 (224)x(5) = 1120
+MOVC4 R0, R0 //sets IMM(15:8) of MOV R0,
+// #224 Ins to 0 which means no sign ext
+MOVC2 R0, R0 //FLAGA on #224
+MOV R0, #224 //R0 now will be 224 and not -32 
+MOVC3 R1, R1 //now FLAGB on #5
+MOV R1, #5
+MOVC1 R0, R1
+
